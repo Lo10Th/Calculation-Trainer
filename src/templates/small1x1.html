@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>small 1x1</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="../scripts.js"></script>
+    <script>
+        checkAnswer(selectedAnswer);
+    </script>
+</head>
+<body>
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+            <span class="navbar-brand mb-0 h1">Small 1x1 Trainer</span>
+        </div>
+    </nav>
+    <div class="container">
+        <h4>{{question}}</h4>
+        <div class="d-flex justify-content-between">
+            <button type="button" class="btn btn-primary" onclick="checkAnswer('a1')">{{a1}}</button>
+            <button type="button" class="btn btn-primary btn-margin" onclick="checkAnswer('a2')">{{a2}}</button>
+            <button type="button" class="btn btn-primary btn-margin" onclick="checkAnswer('a3')">{{a3}}</button>
+        </div>
+        <p id="ifcorrect"></p>
+    </div>
+</body>
+</html>

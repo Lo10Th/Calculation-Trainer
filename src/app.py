@@ -59,17 +59,146 @@ def small1x1():
 
 @app.route("/1x1upto20")
 def upto20():
-    return render_template('1x1upto20.html')
+    qn1 = randint(1, 20)
+    qn2 = randint(1, 20)
+    questionint = qn1 * qn2
+    question = str(qn1) + "x" + str(qn2)
+    smramount = randint(1, 3)
+
+    a1 = questionint
+    a2 = questionint
+    a3 = questionint
+
+    if smramount == 1:
+        correctAnswer = "a1"
+        if randint(1, 2) == 1:
+            a2 = questionint + randint(1, 12)
+        else:
+            a2 = questionint - randint(1, 12)
+        if randint(1, 2) == 1:
+            a3 = questionint + randint(1, 12)
+        else:
+            a3 = questionint - randint(1, 12)
+
+    elif smramount == 2:
+        correctAnswer = "a2"
+        if randint(1, 2) == 1:
+            a1 = questionint + randint(1, 12)
+        else:
+            a1 = questionint - randint(1, 12)
+        if randint(1, 2) == 1:
+            a3 = questionint + randint(1, 12)
+        else:
+            a3 = questionint - randint(1, 12)
+
+    else:
+        correctAnswer = "a3"
+        if randint(1, 2) == 1:
+            a1 = questionint + randint(1, 12)
+        else:
+            a1 = questionint - randint(1, 12)
+        if randint(1, 2) == 1:
+            a2 = questionint + randint(1, 12)
+        else:
+            a2 = questionint - randint(1, 12)
+
+    return render_template('1x1upto20.html', question=question, answer=correctAnswer, a1=a1, a2=a2, a3=a3)
 
 
 @app.route("/1x1upto50")
 def upto50():
-    return render_template('1x1upto50.html')
+    qn1 = randint(1, 50)
+    qn2 = randint(1, 50)
+    questionint = qn1 * qn2
+    question = str(qn1) + "x" + str(qn2)
+    smramount = randint(1, 3)
+
+    a1 = questionint
+    a2 = questionint
+    a3 = questionint
+
+    if smramount == 1:
+        correctAnswer = "a1"
+        if randint(1, 2) == 1:
+            a2 = questionint + randint(1, 12)
+        else:
+            a2 = questionint - randint(1, 12)
+        if randint(1, 2) == 1:
+            a3 = questionint + randint(1, 12)
+        else:
+            a3 = questionint - randint(1, 12)
+
+    elif smramount == 2:
+        correctAnswer = "a2"
+        if randint(1, 2) == 1:
+            a1 = questionint + randint(1, 12)
+        else:
+            a1 = questionint - randint(1, 12)
+        if randint(1, 2) == 1:
+            a3 = questionint + randint(1, 12)
+        else:
+            a3 = questionint - randint(1, 12)
+
+    else:
+        correctAnswer = "a3"
+        if randint(1, 2) == 1:
+            a1 = questionint + randint(1, 12)
+        else:
+            a1 = questionint - randint(1, 12)
+        if randint(1, 2) == 1:
+            a2 = questionint + randint(1, 12)
+        else:
+            a2 = questionint - randint(1, 12)
+
+    return render_template('1x1upto20.html', question=question, answer=correctAnswer, a1=a1, a2=a2, a3=a3)
 
 
 @app.route("/1x1upto100")
 def upto100():
-    return render_template('1x1upto100.html')
+    qn1 = randint(1, 100)
+    qn2 = randint(1, 100)
+    questionint = qn1 * qn2
+    question = str(qn1) + "x" + str(qn2)
+    smramount = randint(1, 3)
+
+    a1 = questionint
+    a2 = questionint
+    a3 = questionint
+
+    if smramount == 1:
+        correctAnswer = "a1"
+        if randint(1, 2) == 1:
+            a2 = questionint + randint(1, 25)
+        else:
+            a2 = questionint - randint(1, 25)
+        if randint(1, 2) == 1:
+            a3 = questionint + randint(1, 25)
+        else:
+            a3 = questionint - randint(1, 25)
+
+    elif smramount == 2:
+        correctAnswer = "a2"
+        if randint(1, 2) == 1:
+            a1 = questionint + randint(1, 25)
+        else:
+            a1 = questionint - randint(1, 25)
+        if randint(1, 2) == 1:
+            a3 = questionint + randint(1, 25)
+        else:
+            a3 = questionint - randint(1, 25)
+
+    else:
+        correctAnswer = "a3"
+        if randint(1, 2) == 1:
+            a1 = questionint + randint(1, 25)
+        else:
+            a1 = questionint - randint(1, 25)
+        if randint(1, 2) == 1:
+            a2 = questionint + randint(1, 25)
+        else:
+            a2 = questionint - randint(1, 25)
+
+    return render_template('1x1upto100.html', question=question, answer=correctAnswer, a1=a1, a2=a2, a3=a3)
 
 
 if __name__ == '__main__':

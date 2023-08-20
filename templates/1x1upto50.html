@@ -11,16 +11,29 @@
             const correctAnswer = "{{answer}}";
             const Element = document.getElementById("ifcorrect");
             if (selectedAnswer === correctAnswer) {
-                Element.innerHTML = "Correct!   +1 Points";
+                Element.innerHTML = "Correct!   +10 Points";
+                addPoints();
                 setTimeout(function() {
-                    location.reload(); // Lädt die Seite nach 2 Sekunden neu
+                    location.reload();
                 }, 700);
             } else {
                 Element.innerHTML = "Wrong!";
                 setTimeout(function() {
-                    location.reload(); // Lädt die Seite nach 2 Sekunden neu
+                    location.reload();
                 }, 700);
             }
+        }
+        function addPoints() {
+            fetch("/add_10points", {
+                method: "POST",
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data.message); 
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
         }
     </script>
 </head>

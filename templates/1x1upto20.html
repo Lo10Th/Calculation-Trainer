@@ -11,7 +11,8 @@
             const correctAnswer = "{{answer}}";
             const Element = document.getElementById("ifcorrect");
             if (selectedAnswer === correctAnswer) {
-                Element.innerHTML = "Correct!   +1 Points";
+                Element.innerHTML = "Correct!   +3 Points";
+                addPoints();
                 setTimeout(function() {
                     location.reload();
                 }, 700);
@@ -21,6 +22,18 @@
                     location.reload();
                 }, 700);
             }
+        }
+        function addPoints() {
+            fetch("/add_3points", {
+                method: "POST",
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data.message); 
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
         }
     </script>
 </head>

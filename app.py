@@ -1,7 +1,45 @@
 from flask import Flask, render_template
+from flask import request, jsonify
 from random import randint
+import sqlite3
+from pathlib import Path
 
 app = Flask(__name__)
+
+db_path = Path("points_data.db")
+
+conn=sqlite3.connect(db_path)
+cursor = conn.cursor()
+
+cursor.execute('''
+    CREATE TABLE IF NOT EXISTS points_data (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        points INTEGER
+    )
+''')
+
+conn.commit()
+conn.close()
+
+def add_points(points):
+    conn=sqlite3.connect(db_path)
+    cursor = conn.cursor()
+
+    cursor.execute('''
+        INSERT INTO points_data (points)
+        VALUES (?)
+    ''', (points,))
+
+    conn.commit()
+    conn.close()
+
+def get_points():
+    conn = sqlite3.connect(db_path)
+    cursor = conn.cursor()
+    cursor.execute("SELECT SUM(points) FROM points_data")
+    total_points = cursor.fetchone()[0]
+    conn.close()
+    return total_points
 
 def getQuestion(howbig, difference, html):
     qn1 = randint(1, howbig)
@@ -54,6 +92,25 @@ def getQuestion(howbig, difference, html):
 def index():
     return render_template('index.html')
 
+@app.route("/add_1point", methods=["POST"])
+def add_1point():
+    add_points(1)
+    return jsonify({"message": "Point added successfully"})
+
+@app.route("/add_3points", methods=["POST"])
+def add_3points():
+    add_points(3)
+    return jsonify({"message": "Point added successfully"})
+
+@app.route("/add_10points", methods=["POST"])
+def add_10points():
+    add_points(10)
+    return jsonify({"message": "Point added successfully"})
+
+@app.route("/add_20points", methods=["POST"])
+def add_20points():
+    add_points(20)
+    return jsonify({"message": "Point added successfully"})
 
 @app.route("/small1x1")
 def small1x1():

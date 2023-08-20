@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+from flask import request, jsonify
 from random import randint
 import sqlite3
 from pathlib import Path
@@ -91,6 +92,25 @@ def getQuestion(howbig, difference, html):
 def index():
     return render_template('index.html')
 
+@app.route("/add_1point", methods=["POST"])
+def add_1point():
+    add_points(1)
+    return jsonify({"message": "Point added successfully"})
+
+@app.route("/add_3points", methods=["POST"])
+def add_3points():
+    add_points(3)
+    return jsonify({"message": "Point added successfully"})
+
+@app.route("/add_10points", methods=["POST"])
+def add_10points():
+    add_points(10)
+    return jsonify({"message": "Point added successfully"})
+
+@app.route("/add_20points", methods=["POST"])
+def add_20points():
+    add_points(20)
+    return jsonify({"message": "Point added successfully"})
 
 @app.route("/small1x1")
 def small1x1():

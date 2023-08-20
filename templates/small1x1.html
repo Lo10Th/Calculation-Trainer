@@ -11,18 +11,30 @@
             const correctAnswer = "{{answer}}";
             const Element = document.getElementById("ifcorrect");
             if (selectedAnswer === correctAnswer) {
-                Element.innerHTML = "Correct!   +1 Points";
-                setTimeout(function() {
-                    location.reload(); // Lädt die Seite nach 2 Sekunden neu
-                }, 700);
+                Element.innerHTML = "Correct!   +1 Point";
+                addPoint();
             } else {
                 Element.innerHTML = "Wrong!";
-                setTimeout(function() {
-                    location.reload(); // Lädt die Seite nach 2 Sekunden neu
-                }, 700);
             }
+            setTimeout(function() {
+                location.reload();
+            }, 700);
+        }
+    
+        function addPoint() {
+            fetch("/add_1point", {
+                method: "POST",
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data.message); 
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
         }
     </script>
+    
 </head>
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">

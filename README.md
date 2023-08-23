@@ -48,10 +48,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Author
 
-[Your Name or Username]
+Karl Harrenga (Lo10Th)
 
-## Contact
-
-For any questions or suggestions, you can reach me at [your email address].
+#
 
 Thank you for using Calculation-Trainer! Enjoy learning and improving your mathematical skills!

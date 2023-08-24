@@ -9,30 +9,33 @@
     <link rel="stylesheet" href="stylecss.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Small 1x1 Trainer</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-                <a class="nav-link active" aria-current="page" href="/">Home</a>
-                <a class="nav-link" href="/small1x1">Small 1x1</a>
-                <a class="nav-link" href="/1x1upto20">1x1 up to 20</a>
-                <a class="nav-link" href="/1x1upto50">1x1 up to 50</a>
-                <a class="nav-link" href="/1x1upto100">1x1 up to 100</a>
-            </div>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Small 1x1 Trainer</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+              <a class="nav-link active" aria-current="page" href="/">Home</a>
+              <a class="nav-link" href="/small1x1">Small 1x1</a>
+              <a class="nav-link" href="/1x1upto20">1x1 up to 20</a>
+              <a class="nav-link" href="/1x1upto50">1x1 up to 50</a>
+              <a class="nav-link" href="/1x1upto100">1x1 up to 100</a>
           </div>
         </div>
-      </nav>
+      </div>
+    </nav>
+    <div class="container">
+      <h5>You have {{total_points}} Points</h5>
+    </div>
     <h4 class="container mt-3">What would you like to start with?</h4>
     <div class="container mt-3">
         <div class="d-flex justify-content-between">
             <button type="button" onclick="window.location.href = '/small1x1';" class="btn btn-primary">Small 1x1</button>
-            <button type="button" onclick="window.location.href = '/upto20';" class="btn btn-primary btn-margin">1x1 up to 20</button>
-            <button type="button" onclick="window.location.href = '/upto50';" class="btn btn-primary btn-margin">1x1 up to 50</button>
-            <button type="button" onclick="window.location.href = '/upto100';" class="btn btn-primary btn-margin">1x1 up to 100</button>
+            <button type="button" onclick="window.location.href = '/1x1upto20';" class="btn btn-primary btn-margin">1x1 up to 20</button>
+            <button type="button" onclick="window.location.href = '/1x1upto50';" class="btn btn-primary btn-margin">1x1 up to 50</button>
+            <button type="button" onclick="window.location.href = '/1x1upto100';" class="btn btn-primary btn-margin">1x1 up to 100</button>
         </div>
     </div>
 </body>

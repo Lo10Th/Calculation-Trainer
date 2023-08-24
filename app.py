@@ -40,6 +40,13 @@ def get_points():
     total_points = cursor.fetchone()[0]
     conn.close()
     return total_points
+def getSumPoints():
+    conn = sqlite3.connect(db_path)
+    cursor = conn.cursor()
+    cursor.execute("SELECT SUM(points) FROM points_data")
+    total_points = cursor.fetchone()[0]
+    conn.close()
+    return total_points
 
 def getQuestion(howbig, difference, html):
     qn1 = randint(1, howbig)
@@ -85,12 +92,11 @@ def getQuestion(howbig, difference, html):
         else:
             a2 = questionint - randint(1, difference)
 
-    return render_template(html, question=question, answer=correctAnswer, a1=a1, a2=a2, a3=a3)
-
+    return render_template(html, question=question, answer=correctAnswer, a1=a1, a2=a2, a3=a3, total_points=getSumPoints())
 
 @app.route("/")
 def index():
-    return render_template('index.html')
+    return render_template('index.html',total_points=getSumPoints())
 
 @app.route("/add_1point", methods=["POST"])
 def add_1point():

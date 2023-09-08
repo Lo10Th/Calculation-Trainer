@@ -1,0 +1,15 @@
+.container {
+    display: grid;
+    place-items: center;
+}
+
+.btn-margin {
+    margin-left: 10px;
+}
+
+.bottom-text {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+  }

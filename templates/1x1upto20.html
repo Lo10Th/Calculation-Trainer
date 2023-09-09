@@ -43,6 +43,13 @@
                 console.error('Error:', error);
             });
         }
+        var total_points = "{{total_points}}";
+        if (total_points == "None"){
+            total_points = "no"
+        }
+        function doc() {
+            document.write(total_points);
+        }
     </script>
 </head>
 <body>
@@ -64,7 +71,7 @@
         </div>
     </nav>
     <div class="container">
-        <h5>You have got {{total_points}} Points</h5>
+        <h5>You have got <script>doc()</script> Points</h5>
     </div>
     <div class="container">
         <h4>{{question}}</h4>

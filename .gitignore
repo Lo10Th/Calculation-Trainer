@@ -3,10 +3,8 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-#vscode
+#IDE´s
 .vscode/
-
-#.idea
 .idea/
 
 #db
